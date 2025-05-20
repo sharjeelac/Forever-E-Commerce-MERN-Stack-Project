@@ -2,7 +2,7 @@
   import 'dotenv/config';
   import express from 'express';
   import cloudinary from './config/cloudinary.js';
-  import connecDB from './config/mongodb.js';
+  import connectDB from './config/mongodb.js';
   import cartRouter from './Routes/cart.Routes.js';
   import productRouter from './Routes/product.routes.js';
   import userRouter from './Routes/user.routes.js';
@@ -11,7 +11,7 @@
   // App Config
   const app = express();
   const PORT = process.env.PORT || 5000;
-  connecDB();
+  connectDB();
   // cloudinary();
 
   // Middlewares

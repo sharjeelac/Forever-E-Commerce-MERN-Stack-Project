@@ -1,6 +1,6 @@
 import { v2 as cloudinary } from 'cloudinary';
 import productModel from '../Models/product.model.js';
-
+import connectDB from '../config/mongodb.js';
 // add product
 const addProduct = async (req, res) => {
   try {
@@ -72,14 +72,20 @@ const removeProduct = async (req, res) => {
 };
 
 // list all product
+ // or wherever your connectDB lives
+import productModel from '../models/productModel.js';
+
 const listProduct = async (req, res) => {
   try {
+    await connectDB(); // 🧙‍♂️ Must connect before querying
+
     const products = await productModel.find({});
     res.json({ success: true, products });
   } catch (error) {
-    res.json({ success: false, message: error.message }).status(400);
+    res.status(400).json({ success: false, message: error.message });
   }
 };
+
 
 // for single product info
 const singleProduct = async (req, res) => {
