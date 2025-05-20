@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const connecDB = async () => {
   // const localUrl = 'mongodb://localhost:27017/e-commerce';
-  const atlasUrl = `${process.env.MONGODB_URI}/forever-e-commerce`
+  const atlasUrl = `${process.env.MONGODB_URI}`
   await mongoose
     .connect(atlasUrl )
     .then(() => console.log('✅ Connected To MongoDB'))
