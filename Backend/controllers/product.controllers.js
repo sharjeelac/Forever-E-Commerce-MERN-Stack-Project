@@ -72,9 +72,6 @@ const removeProduct = async (req, res) => {
 };
 
 // list all product
- // or wherever your connectDB lives
-import productModel from '../models/productModel.js';
-
 const listProduct = async (req, res) => {
   try {
     await connectDB(); // 🧙‍♂️ Must connect before querying
