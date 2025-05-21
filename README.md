@@ -66,7 +66,7 @@ server/      # Express backend
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/your-username/forever-ecommerce.git
+git clone https://github.com/sharjeelac/Forever-E-Commerce-MERN-Stack-Project.git
 cd forever-ecommerce
 ````
 
